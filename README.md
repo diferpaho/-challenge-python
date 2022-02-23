@@ -8,30 +8,42 @@
 |   |   |   |   |
 |   |   |   |   |
 
-Desarrolle una aplicacion en python que genere la tabla anterior teniendo las siguientes consideraciones:
+Desarrolle una aplicación en python que genere la tabla anterior teniendo las siguientes consideraciones:
 
-- De https://restcountries.com/ obtenga el nombre del idioma que habla el pais y encriptelo con SHA1
-- En la columna Time ponga el tiempo que tardo en armar la fila (debe ser automatico)
-- La tabla debe ser creada en un DataFrame con la libreria PANDAS
-- Con funciones de la libreria pandas muestre el tiempo total, el tiempo promedio, el tiempo minimo y el maximo que tardo en procesar toda las filas de la tabla.
+- De https://restcountries.com/ obtenga el nombre del idioma que habla el país y encríptelo con SHA1
+- En la columna Time ponga el tiempo que tardo en armar la fila (debe ser automático)
+- La tabla debe ser creada en un DataFrame con la librería PANDAS
+- Con funciones de la librería pandas muestre el tiempo total, el tiempo promedio, el tiempo mínimo y el máximo que tardo en procesar toda las filas de la tabla.
 - Guarde el resultado en sqlite.
-- Genere un Json de la tabla creada y guardelo como data.json
+- Genere un Json de la tabla creada y guárdelo como data.json
 - La prueba debe ser entregada en un repositorio git.
 
 Es un plus si:
 
 - No usa famework
 - Entrega Test Unitarios
-- Presenta un diseño de su solucion.
+- Presenta un diseño de su solución.
 
-## Proyecto fue creado usando las siguientes tecnologias:
+## Proyecto fue creado usando las siguientes tecnologías:
 
 - Python 3.8.10
 - SO: Ubuntu 20.04 LTS
 
+## Clonar proyecto:
+Para clonar el proyecto usar el siguiente código:
+```
+git clone https://github.com/diferpaho/challenge-python.git
+```
+
+Ir a la carpeta con el siguiente código
+```
+cd challenge-python
+```
+
+
 ## Ejecutar proyecto
 
-Para ejecutar el codigo puede usar el siguiente comando
+Para ejecutar el código puede usar el siguiente comando
 ```
 python3 src/main.py
 ```
@@ -43,7 +55,7 @@ La base de datos queda guardada con el nombre:
 sqlite.db
 ```
 ## Archivo json
-El archivo json con la informacion queda guardado con el nombre:
+El archivo json con la información queda guardado con el nombre:
 ```
 sqlite.db
 ```
@@ -54,9 +66,9 @@ Para ejecutar las pruebas puede usar el siguiente comando:
 python3 src/test.py
 ```
 
-## Diseño de la solucion
+## Diseño de la solución
 
-El diseño de la solucion es un diagrama de secuencia que podra encontrar en la ruta
+El diseño de la solución es un diagrama de secuencia que podrá encontrar en la ruta
 ```
 diseño/diagrama.png
 ```
