@@ -26,11 +26,33 @@ Es un plus si:
 
 ## Ejecutar proyecto
 
+Para ejecutar el codigo puede usar el siguiente comando
+```
+python3 src/main.py
+```
+
 ## Base de datos en sqlite
 
+La base de datos queda guardada con el nombre:
+```
+sqlite.db
+```
 ## Archivo json
-
+El archivo json con la informacion queda guardado con el nombre:
+```
+sqlite.db
+```
 ## Ejecutar pruebas
 
+Para ejecutar las pruebas puede usar el siguiente comando:
+```
+python test.py
+```
+
 ## Diseño de la solucion
+
+El diseño de la solucion es un diagrama de secuencia que podra encontrar en la ruta
+```
+diseño/diagrama.png
+```
 
