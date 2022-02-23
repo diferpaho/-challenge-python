@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import hashlib
 import time
-import sqlite3
+
 
 # Obtener la información de los países
 def get_paises(url):
