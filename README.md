@@ -24,6 +24,11 @@ Es un plus si:
 - Entrega Test Unitarios
 - Presenta un diseño de su solucion.
 
+## Proyecto fue creado usando las siguientes tecnologias:
+
+- Python 3.8.10
+- SO: Ubuntu 20.04 LTS
+
 ## Ejecutar proyecto
 
 Para ejecutar el codigo puede usar el siguiente comando
