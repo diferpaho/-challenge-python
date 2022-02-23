@@ -22,19 +22,28 @@ def get_df(data):
     return df
 
 def export_to_sqlite(df):
-    # Crear una conexión a la base de datos SQLite
-    con = sqlite3.connect("sqlite.db")
-    # Crear la tabla donde se guardara la informacion
-    create_sql="CREATE TABLE IF NOT EXISTS countries (id INTEGER,region TEXT,city TEXT,languaje TEXT,time FLOAT)"
-    cursor=con.cursor()
-    cursor.execute(create_sql)
-    # Agregar informacion a la tabla en la base de datos
-    for row in df.itertuples():
-        insert_sql=f"INSERT INTO countries (id,region,city,languaje,time) VALUES (?, ?, ? ,?,?)" 
-        cursor.execute(insert_sql, row)
+    try:
+        # Crear una conexión a la base de datos SQLite
+        con = sqlite3.connect("sqlite.db")
+        # Crear la tabla donde se guardara la informacion
+        create_sql="CREATE TABLE IF NOT EXISTS countries (id INTEGER,region TEXT,city TEXT,languaje TEXT,time FLOAT)"
+        cursor=con.cursor()
+        cursor.execute(create_sql)
+        # Agregar informacion a la tabla en la base de datos
+        for row in df.itertuples():
+            insert_sql=f"INSERT INTO countries (id,region,city,languaje,time) VALUES (?, ?, ? ,?,?)" 
+            cursor.execute(insert_sql, row)
+        con.commit()
+        return True
+    except:
+        return False
 
-    con.commit()
+    
 
 def export_to_json(df):
-    # crear archivo json con la informacion del dataframe
-    df.to_json(r'data.json')
+    try:
+        # crear archivo json con la informacion del dataframe
+        df.to_json(r'data.json')
+        return True
+    except:
+        return False
