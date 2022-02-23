@@ -12,8 +12,9 @@ def get_paises(url):
     return data
 
 def get_df(data):
-    # Creación del data frame
+    # Creación del dataframe
     df=pd.DataFrame(columns = ['Region' , 'City Name', 'Languaje','Time(ms)'])
+    # Llenar dataframe con los datos obtenidos anteriormente
     for i in data:
         language_SHA1 = hashlib.sha1(i["languages"][0]["nativeName"].encode('utf-8'))
         start_time = time.time()
@@ -21,14 +22,19 @@ def get_df(data):
     return df
 
 def export_to_sqlite(df):
-    # Crea una conexión a la base de datos SQLite
+    # Crear una conexión a la base de datos SQLite
     con = sqlite3.connect("sqlite.db")
+    # Crear la tabla donde se guardara la informacion
     create_sql="CREATE TABLE IF NOT EXISTS countries (id INTEGER,region TEXT,city TEXT,languaje TEXT,time FLOAT)"
     cursor=con.cursor()
     cursor.execute(create_sql)
-
+    # Agregar informacion a la tabla en la base de datos
     for row in df.itertuples():
         insert_sql=f"INSERT INTO countries (id,region,city,languaje,time) VALUES (?, ?, ? ,?,?)" 
         cursor.execute(insert_sql, row)
 
     con.commit()
+
+def export_to_json(df):
+    # crear archivo json con la informacion del dataframe
+    df.to_json(r'data.json')
