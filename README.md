@@ -1,1 +1,1 @@
-# -challenge-python
+# challenge-python
