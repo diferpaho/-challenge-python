@@ -51,7 +51,7 @@ sqlite.db
 
 Para ejecutar las pruebas puede usar el siguiente comando:
 ```
-python test.py
+python3 src/test.py
 ```
 
 ## Diseño de la solucion
