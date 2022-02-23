@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import hashlib
 import time
+import sqlite3
 
 
 # Obtener la información de los países
@@ -18,3 +19,16 @@ def get_df(data):
         start_time = time.time()
         df=df.append({'Region': i["region"], 'City Name':i["name"], 'Languaje':str(language_SHA1.hexdigest()),'Time(ms)':(time.time() - start_time)*1000},ignore_index=True)
     return df
+
+def export_to_sqlite(df):
+    # Crea una conexión a la base de datos SQLite
+    con = sqlite3.connect("sqlite.db")
+    create_sql="CREATE TABLE IF NOT EXISTS countries (id INTEGER,region TEXT,city TEXT,languaje TEXT,time FLOAT)"
+    cursor=con.cursor()
+    cursor.execute(create_sql)
+
+    for row in df.itertuples():
+        insert_sql=f"INSERT INTO countries (id,region,city,languaje,time) VALUES (?, ?, ? ,?,?)" 
+        cursor.execute(insert_sql, row)
+
+    con.commit()
