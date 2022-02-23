@@ -57,7 +57,7 @@ sqlite.db
 ## Archivo json
 El archivo json con la información queda guardado con el nombre:
 ```
-sqlite.db
+data.json
 ```
 ## Ejecutar pruebas
 
